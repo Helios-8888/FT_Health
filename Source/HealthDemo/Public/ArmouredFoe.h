@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "BasicFoe.h"
 #include "Materials/Material.h"
+#include "ArmouredHealth.h"
 #include "ArmouredFoe.generated.h"
 
 /**
@@ -22,9 +23,11 @@ protected:
 public:
 	// Sets default values for this pawn's properties
 	AArmouredFoe();
-
+	void ArmourBroken();
 	// for this task look at how we called the died and see if you can recreate it, to change the material
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Material", meta = (AllowPrivateAccess = "true"))
 	UMaterial* UnArmouredMaterial;
+	UMaterial* ArmouredMaterial;
+	UArmouredHealth* ArmouredHealth;
 
 };

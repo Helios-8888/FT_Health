@@ -11,12 +11,25 @@
  * You will need add some variables 
  * Give it a go
  */
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FArmourBroken);
+
 UCLASS()
 class HEALTHDEMO_API UArmouredHealth : public UHealth
 {
 	GENERATED_BODY()
 	
 	public:
+		UArmouredHealth();
 		// notice i have to say this is an override
-		void TakeDamage(int Damage) override;
+		void TakeDamage(int Damage) override;;
+		UPROPERTY(VisibleAnywhere, Category = "Armour|MaxArmour")
+		int MaxArmour = 100;
+		UPROPERTY(VisibleAnywhere, Category = "Armour|Remaining Armour")
+		int RemainingArmour;
+
+		int DamageType1Reduction = 2;
+		int DamageType2Reduction = 5;
+		int LowDamageThreshold = 10;
+
+		FArmourBroken ArmourBroken;
 };

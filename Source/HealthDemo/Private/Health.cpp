@@ -30,7 +30,7 @@ void UHealth::TakeDamage(int Damage)
 	HP -= Damage;
 	if (HP < 0)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("I am hit"));
+		UE_LOG(LogTemp, Warning, TEXT("I have died"));
 		HP = 0;
 		// Tell interested classes we have died, as we are polite 
 		Died.Broadcast();
